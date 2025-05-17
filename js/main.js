@@ -15,24 +15,40 @@ document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.querySelectorAll('nav ul li a');
     const sections = document.querySelectorAll('section');
     
+    // Function to handle navigation
+    function navigateToSection(targetId) {
+        // Remove active class from all links
+        navLinks.forEach(link => link.classList.remove('active'));
+        
+        // Add active class to corresponding nav link
+        const correspondingNavLink = document.querySelector(`nav ul li a[href="${targetId}"]`);
+        if (correspondingNavLink) {
+            correspondingNavLink.classList.add('active');
+        }
+        
+        // Hide all sections
+        sections.forEach(section => section.classList.remove('active'));
+        
+        // Show target section
+        document.querySelector(targetId).classList.add('active');
+    }
+    
+    // Add event listeners to nav links
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
-            
-            // Remove active class from all links
-            navLinks.forEach(link => link.classList.remove('active'));
-            
-            // Add active class to clicked link
-            this.classList.add('active');
-            
-            // Get the target section
             const targetId = this.getAttribute('href');
-            
-            // Hide all sections
-            sections.forEach(section => section.classList.remove('active'));
-            
-            // Show target section
-            document.querySelector(targetId).classList.add('active');
+            navigateToSection(targetId);
+        });
+    });
+    
+    // Add event listeners to buttons in the hero section
+    const heroButtons = document.querySelectorAll('.hero .buttons .btn');
+    heroButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            navigateToSection(targetId);
         });
     });
     
@@ -138,13 +154,17 @@ function loadProjectData() {
     const projectsData = [
         {
             title: "Capture The Flag (CTF) Challenges",
-            description: `• Web Application Attacks: Advanced SQL Injections, XSS, CSRF, CORS & SOP, Authentication (MFA, OAuth, 
+            description: `• <strong>Web Application Attacks:</strong> Advanced SQL Injections, XSS, CSRF, CORS & SOP, Authentication (MFA, OAuth, 
 JWT), Server-side attacks, HTTP Request smuggling.
-• Binary exploitation: Stack canary, ASLR, ret2libc, NOP sleds and ROP gadgets (buffer overflow).
-• Cryptography: ECB, SHA-256 Hash Extension, Padding Oracle, and PGP.
-• Reverse Engineering: Static analysis (IDA Pro, Ghidra), Dynamic debugging (GDB, WinDbg), Decompilation 
+
+• <strong>Binary exploitation:</strong> Stack canary, ASLR, ret2libc, NOP sleds and ROP gadgets (buffer overflow).
+
+• <strong>Cryptography:</strong> ECB, SHA-256 Hash Extension, Padding Oracle, and PGP.
+
+• <strong>Reverse Engineering:</strong> Static analysis (IDA Pro, Ghidra), Dynamic debugging (GDB, WinDbg), Decompilation 
 techniques, and Assembly language interpretation (x86-x64).
-• Forensics: Autopsy, Volatility, disk image examination, memory dumps, file carving, timeline analysis, artifact recovery, 
+
+• <strong>Forensics:</strong> Autopsy, Volatility, disk image examination, memory dumps, file carving, timeline analysis, artifact recovery, 
 malware detection, and incident reconstruction techniques`,
             icon: "fas fa-flag",
             tags: ["Web Security", "Binary Exploitation", "Cryptography", "Reverse Engineering", "Forensics"]
@@ -156,21 +176,6 @@ socket programming, developed a packet sniffer tool to analyze network packet be
 techniques such as SYN cookies within an isolated emulation environment.`,
             icon: "fas fa-network-wired",
             tags: ["Network Security", "Raw Sockets", "Packet Analysis", "DDoS Mitigation"]
-        },
-        {
-            title: "AWS Cloud Security and Monitoring Implementation",
-            description: `• Designed and implemented a comprehensive AWS security infrastructure utilizing KMS, IAM policies, encryption, security 
-groups, NACLs, and Network Firewall, while configuring CloudTrail, CloudWatch, and AWS Config for automated 
-monitoring, and incident response, resulting in enhanced data protection, operational security, and cost efficiency`,
-            icon: "fab fa-aws",
-            tags: ["AWS", "Cloud Security", "IAM", "KMS", "CloudTrail", "Monitoring"]
-        },
-        {
-            title: "BGP & HTTPS Hijacking Attack",
-            description: `• Conducted BGP and HTTPS hijacking attacks to analyze routing vulnerabilities and employed RPKI-based security 
-measures to test mitigations against network hijacking and HTTPS spoofing threats.`,
-            icon: "fas fa-route",
-            tags: ["BGP", "HTTPS", "Network Security", "RPKI", "FRRouting"]
         },
         {
             title: "Remote Method Invocation Library",
@@ -203,19 +208,27 @@ programming practices`,
             icon: "fas fa-terminal",
             tags: ["C", "Shell Programming", "Process Management", "Signal Handling", "Linux"]
         },
-        
         {
-            title: "Containerized Microservices Platform",
-            description: "Architected and deployed a secure containerized microservices platform using Docker and Kubernetes with integrated security controls.",
-            icon: "fas fa-cubes",
-            tags: ["Docker", "Kubernetes", "Microservices", "Security"]
+            title: "Cloud-Native Sentiment Analysis with Microservices & Kafka",
+            description: `Developed a cloud-native sentiment analysis application using a microservice architecture (React frontend, Spring WebApp, and Python-based logic). Deployed the system on Google Kubernetes Engine (GKE) with Dockerized services and Kubernetes manifests. Integrated Apache Kafka as a message broker between services to enable asynchronous communication, improve reliability, and ensure scalability. Demonstrated seamless end-to-end execution of user-triggered sentiment analysis through a web interface.`,
+            icon: "fas fa-cloud",
+            tags: ["Microservices", "Kafka", "Kubernetes", "GKE", "Docker"]
         },
         {
-            title: "Infrastructure as Code Implementation",
-            description: "Implemented Infrastructure as Code using Terraform and Ansible for a cloud-based environment, ensuring consistent and secure deployments.",
-            icon: "fas fa-code",
-            tags: ["Terraform", "Ansible", "IaC", "Cloud"]
+            title: "AWS Cloud Security and Monitoring Implementation",
+            description: `• Designed and implemented a comprehensive AWS security infrastructure utilizing KMS, IAM policies, encryption, security 
+groups, NACLs, and Network Firewall, while configuring CloudTrail, CloudWatch, and AWS Config for automated 
+monitoring, and incident response, resulting in enhanced data protection, operational security, and cost efficiency`,
+            icon: "fab fa-aws",
+            tags: ["AWS", "Cloud Security", "IAM", "KMS", "CloudTrail", "Monitoring"]
         },
+        {
+            title: "BGP & HTTPS Hijacking Attack",
+            description: `• Conducted BGP and HTTPS hijacking attacks to analyze routing vulnerabilities and employed RPKI-based security 
+measures to test mitigations against network hijacking and HTTPS spoofing threats.`,
+            icon: "fas fa-route",
+            tags: ["BGP", "HTTPS", "Network Security", "RPKI", "FRRouting"]
+        },        
         {
             title: "Security Incident Response Platform",
             description: "Created an automated security incident response platform that detects, analyzes, and responds to security threats in real-time.",
@@ -228,6 +241,7 @@ programming practices`,
     // Populate projects grid
     const projectsGrid = document.querySelector('.projects-grid');
     if (projectsGrid) {
+        projectsGrid.innerHTML = ''; // Clear existing projects
         projectsData.forEach(project => {
             const projectCard = document.createElement('div');
             projectCard.className = 'project-card';
