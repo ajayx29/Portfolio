@@ -154,7 +154,7 @@ const HeroSection = ({ setActiveSection }) => {
     <section id="home" className="min-h-screen flex flex-col md:flex-row items-center">
       <div className="md:w-1/2 pt-24 md:pt-0">
         <h1 className="text-4xl md:text-6xl font-bold mb-4">
-          Hello, I'm <span className="text-blue-400">Aruneswari Sankar</span>
+          Hello, I'm <span className="text-blue-400">Ajay Sunandan</span>
         </h1>
         <h2 className="text-2xl md:text-3xl text-gray-300 mb-6">
           Software Developer
@@ -623,7 +623,7 @@ const Footer = () => {
         
         <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-500 text-sm">
-            © {new Date().getFullYear()} Aruneswari Sankar. All rights reserved.
+            © {new Date().getFullYear()} Ajay Sunandan. All rights reserved.
           </p>
           
           <div className="flex space-x-4 mt-4 md:mt-0">

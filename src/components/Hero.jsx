@@ -26,7 +26,7 @@ const Hero = () => {
         <div className="relative w-full max-w-2xl mx-auto">
           {/* Glowing circle behind avatar */}
           <div className="absolute left-1/2 top-0 w-56 h-56 -translate-x-1/2 -translate-y-1/4 
-                          rounded-full bg-gradient-to-br from-purple-600 to-cyan-400 opacity-30 
+                          rounded-full bg-gradient-to-br from-green-600 to-cyan-400 opacity-30 
                           blur-2xl" />
               
           {/* Bio Content */}
@@ -40,7 +40,7 @@ const Hero = () => {
             <div className="flex flex-col items-center md:flex-row md:items-start gap-8">
               {/* Avatar placeholder - can be replaced with an actual image */}
               <div className="relative">
-                <div className="w-36 h-36 rounded-full bg-gradient-to-br from-purple-500 to-cyan-400 
+                <div className="w-36 h-36 rounded-full bg-gradient-to-br from-green-500 to-cyan-400 
                                 flex items-center justify-center shadow-lg">
                   <span className="text-4xl font-bold text-white">AS</span>
                 </div>
@@ -48,20 +48,18 @@ const Hero = () => {
               
               <div className="flex-1 text-center md:text-left">
                 <h1 className="text-4xl sm:text-5xl font-bold text-white">
-                  Aruneswari Sankar
+                  Ajay Sunandan
                 </h1>
                 
-                <div className="h-1 w-16 bg-gradient-to-r from-purple-500 to-cyan-400 my-4 mx-auto md:mx-0" />
+                <div className="h-1 w-16 bg-gradient-to-r from-green-500 to-cyan-400 my-4 mx-auto md:mx-0" />
                 
                 <h2 className="text-xl sm:text-2xl font-medium text-cyan-300 mb-4">
-                  Software Engineer
+                  Security Engineer
                 </h2>
                 
                 <p className="text-gray-300 text-base sm:text-lg mb-6">
-                  I'm a passionate software engineer with expertise in building robust and scalable 
-                  applications. I love solving complex problems with clean, efficient code and 
-                  creating intuitive user experiences that make a difference.
-                  I'm currently looking for Software engineer internships for Fall 2025. 
+                A driven cybersecurity professional with a strong foundation in computer networks, currently pursuing a master’s in cybersecurity to deepen expertise in cloud and systems security. I'm eager to explore and contribute to securing modern digital infrastructure while optimizing system resilience and performance.
+                
                 </p>
                 
                 <div className="flex flex-wrap gap-3 justify-center md:justify-start">
@@ -69,7 +67,7 @@ const Hero = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={() => scrollToSection('projects')}
-                    className="bg-gradient-to-r from-purple-600 to-purple-800 py-3 px-6 
+                    className="bg-gradient-to-r from-green-600 to-green-800 py-3 px-6 
                                rounded-full text-white font-medium shadow-lg cursor-pointer"
                   >
                     View Projects

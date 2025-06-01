@@ -15,10 +15,24 @@ export default {
           teal: '#64ffda',  // Teal accent
           slate: '#8892b0',  // Slate text
           light: '#ccd6f6',  // Light slate for headings
+        },
+        purple: {
+          500: '#32d17a',  // Replaced with green
+          600: '#2bb76c',  // Replaced with darker green
+          700: '#259d5d',  // Replaced with even darker green
+          800: '#1f834e',  // Replaced with very dark green
+          900: '#196c40',  // Replaced with deepest green
+        },
+        green: {
+          500: '#32d17a',
+          600: '#2bb76c',
+          700: '#259d5d',
+          800: '#1f834e',
+          900: '#196c40',
         }
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['JetBrains Mono', 'monospace'],
         mono: ['JetBrains Mono', 'monospace'],
       },
     },

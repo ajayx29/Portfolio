@@ -60,9 +60,15 @@ const ProjectCard = ({ index, title, description, tags, image, link, github }) =
       <div className="p-6">
         <h3 className="text-xl md:text-2xl font-bold text-white mb-2">{title}</h3>
         
-        <p className="text-gray-300 text-sm mb-4">
-          {description}
-        </p>
+        <div className="text-gray-300 text-sm mb-4 space-y-2">
+          {typeof description === 'string' && description.includes('•') ? (
+            description.split('\n\n\n').map((point, i) => (
+              <p key={i}>{point}</p>
+            ))
+          ) : (
+            <p>{description}</p>
+          )}
+        </div>
         
         {/* Tags */}
         <div className="flex flex-wrap gap-2 mt-4">
@@ -84,53 +90,114 @@ const ProjectCard = ({ index, title, description, tags, image, link, github }) =
 const Projects = () => {
   // Example projects - replace with your actual projects
   const projects = [
-    {
-      title: "Supply Chain Simulator (Ongoing)",
-      description: "Designing and developing a game based learning simulator. Will update the progress soon!",
-      tags: ["React", "Firebase", "Node.js", "DASH", "Python", "Plotly"],
-      image: null, // Add your image path here
-      link: "https://movie-rec-demo.com",
-      github: "https://github.com/yourusername/movie-app"
+    { 
+      title: "Capture The Flag (CTF) Challenges", 
+      description: [ 
+        "Web Application Attacks: Advanced SQL Injections, XSS, CSRF, CORS & SOP, Authentication (MFA, OAuth, JWT), Server-side attacks, HTTP Request smuggling.", 
+        "Binary exploitation: Stack canary, ASLR, ret2libc, NOP sleds and ROP gadgets (buffer overflow).", 
+        "Cryptography: ECB, SHA-256 Hash Extension, Padding Oracle, and PGP.", 
+        "Reverse Engineering: Static analysis (IDA Pro, Ghidra), Dynamic debugging (GDB, WinDbg), Decompilation techniques, and Assembly language interpretation (x86-x64).", 
+        "Forensics: Autopsy, Volatility, disk image examination, memory dumps, file carving, timeline analysis, artifact recovery, malware detection, and incident reconstruction techniques" 
+      ].map(point => `• ${point}`).join('\n\n\n'), 
+      icon: "fas fa-flag", 
+      tags: ["Web Security", "Binary Exploitation", "Cryptography", "Reverse Engineering", "Forensics"],
+      image: "https://images.unsplash.com/photo-1563206767-5b18f218e8de?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80",
+      link: null,
+      github: null
+    }, 
+    { 
+      title: "Network Protocol Attacks & Analysis", 
+      description: `• Implemented network attack simulations including ICMP flooding, Smurf attacks, and TCP SYN flooding using raw 
+socket programming, developed a packet sniffer tool to analyze network packet behaviors and demonstrated mitigation 
+techniques such as SYN cookies within an isolated emulation environment.`, 
+      icon: "fas fa-network-wired", 
+      tags: ["Network Security", "Raw Sockets", "Packet Analysis", "DDoS Mitigation"],
+      image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80",
+      link: null,
+      github: null
+    }, 
+    { 
+      title: "RAFT Consensus Algorithm",
+      description: [
+        "Implemented Raft consensus protocol for distributed replicated state machines, handling leader election, log replication and fault tolerance across network peers.",
+        "Developed remote procedure call interfaces, utilized gob encoders for data serialization and handled node failure and network partition scenarios."
+      ].map(point => `• ${point}`).join('\n\n\n'),
+      icon: "fas fa-exchange-alt",
+      tags: ["Distributed Systems", "RAFT", "Consensus Protocol", "Multithreading", "Fault Tolerance"],
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+      link: null,
+      github: null
     },
     {
-      title: "Multi-Version Concurrency Control Implementation in BuzzDB",
-      description: "Implemented MVCC using Multi-Version Timestamp Ordering protocol with append-only version storage architecture. Designed version chains, timestamp-based transaction management to improve concurrency while maintaining consistency",
-      tags: [" C++", "MVTO (Multi-version timestamp ordering)"],
-      image: null, // Add your image path here
-      link: "https://project-demo.com",
-      github: "https://github.com/yourusername/project"
-    },
-    {
-      title: "Secure API Authentication System with JWT and RBAC",
-      description: "Developed a secure REST API authentication system using Node.js, Express, and PostgreSQL with JWT token-based authentication. Implemented user registration, login flows and role-based access control ",
-      tags: ["Node.js", "PostgreSQL", "Express", "JWT(JSON Web Token)"],
-      image: null, // Add your image path here
-      link: "https://weather-app-demo.com",
-      github: "https://github.com/yourusername/weather-app"
-    },
-    {
-      title: "Implementation for Internet Simulation",
-      description: "Implemented load balancing, traffic engineering in OSPF, BGP in a virtual network of interconnected ASes, designed to imitate the working of real internet. Deployed and maintained dedicated docker containers for each network component ",
-      tags: ["OSPF", "BGP", "Open vSwitch", "FRR", "Docker"],
-      image: null, // Add your image path here
-      link: "https://task-manager-demo.com",
-      github: "https://github.com/yourusername/task-manager"
-    },
-    {
-      title: "Farm level Crop Yield Prediction using Deep Learning",
-      description: "Co-developed and trained a deep learning model to predict farm-wise crop yield using remotely sensed multitemporal multi-source satellite images, achieving an accuracy of 94.4% ",
-      tags: ["Python", "DL", "Regression", "Google Earth Engine"],
-      image: null, // Add your image path here
-      link: "https://portfolio-demo.com",
-      github: "https://github.com/yourusername/portfolio"
-    },
-    {
-      title: "Path Finder: Mars Rover Project",
-      description: "Developed a dynamic browser-based web application (using the REACT framework), employing multiple shortest path finding algorithms to find the shortest distance between two chosen points in a grid ",
-      tags: ["HTML", "CSS", "React", "JavaScript"],
-      image: null, // Add your image path here
-      link: "https://movie-rec-demo.com",
-      github: "https://github.com/yourusername/movie-app"
+      title: "Remote Method Invocation Library",
+      description: `• Designed and implemented a robust RMI library enabling method calls across network boundaries with support for \ncomplex data structures, multithreading, and fault tolerance mechanisms to handle network failures, ensuring reliable \ncommunication between distributed applications.`,
+      icon: "fas fa-exchange-alt",
+      tags: ["Distributed Systems", "RMI", "Networking", "Multithreading", "Fault Tolerance"],
+      image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+      link: null,
+      github: null
+    }, 
+    { 
+      title: "Heap Allocator", 
+      description: `• Developed a memory allocator, optimized throughput and achieved 74.4% utilization using techniques like segregated 
+free lists, footer removal, decreasing minimum block size and tested correctness and efficiency through GDB and 
+automated drivers.`, 
+      icon: "fas fa-memory", 
+      tags: ["C", "Memory Management", "Performance Optimization", "Systems Programming"],
+      image: "https://images.unsplash.com/photo-1516116216624-53e697fedbea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1228&q=80",
+      link: null,
+      github: null
+    }, 
+    { 
+      title: "Cache Simulator", 
+      description: `• Designed and implemented a cache simulator in C, including optimizing a matrix transpose function to minimize cache 
+misses, reducing clock cycles to meet performance thresholds for both 32x32 and 1024x1024 matrix sizes.`, 
+      icon: "fas fa-microchip", 
+      tags: ["C", "Cache Optimization", "Performance Tuning", "Systems Programming"],
+      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+      link: null,
+      github: null
+    }, 
+    { 
+      title: "Shell Implementation", 
+      description: `• Developed a robust Linux-based shell (tsh) that supported job control, I/O redirection, and signal handling, achieving 
+100% correctness across 32 trace cases while optimizing for race condition handling and adhering to async-signal-safe 
+programming practices`, 
+      icon: "fas fa-terminal", 
+      tags: ["C", "Shell Programming", "Process Management", "Signal Handling", "Linux"],
+      image: "https://images.unsplash.com/photo-1629654297299-c8506221ca97?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80",
+      link: null,
+      github: null
+    }, 
+    { 
+      title: "Cloud-Native Sentiment Analysis with Microservices & Kafka", 
+      description: `Developed a cloud-native sentiment analysis application using a microservice architecture (React frontend, Spring WebApp, and Python-based logic). Deployed the system on Google Kubernetes Engine (GKE) with Dockerized services and Kubernetes manifests. Integrated Apache Kafka as a message broker between services to enable asynchronous communication, improve reliability, and ensure scalability. Demonstrated seamless end-to-end execution of user-triggered sentiment analysis through a web interface.`, 
+      icon: "fas fa-cloud", 
+      tags: ["Microservices", "Kafka", "Kubernetes", "GKE", "Docker"],
+      image: "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+      link: null,
+      github: null
+    }, 
+    { 
+      title: "AWS Cloud Security and Monitoring Implementation", 
+      description: `• Designed and implemented a comprehensive AWS security infrastructure utilizing KMS, IAM policies, encryption, security 
+groups, NACLs, and Network Firewall, while configuring CloudTrail, CloudWatch, and AWS Config for automated 
+monitoring, and incident response, resulting in enhanced data protection, operational security, and cost efficiency`, 
+      icon: "fab fa-aws", 
+      tags: ["AWS", "Cloud Security", "IAM", "KMS", "CloudTrail", "Monitoring"],
+      image: "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+      link: null,
+      github: null
+    }, 
+    { 
+      title: "BGP & HTTPS Hijacking Attack", 
+      description: `• Conducted BGP and HTTPS hijacking attacks to analyze routing vulnerabilities and employed RPKI-based security 
+measures to test mitigations against network hijacking and HTTPS spoofing threats.`, 
+      icon: "fas fa-route", 
+      tags: ["BGP", "HTTPS", "Network Security", "RPKI", "FRRouting"],
+      image: "https://images.unsplash.com/photo-1639322537228-f710d846310a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1332&q=80",
+      link: null,
+      github: null
     }
   ];
 
@@ -184,7 +251,7 @@ const Projects = () => {
           <motion.a
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            href="https://github.com/arunasankar01" 
+            href="https://github.com/ajayx29" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-purple-800 py-3 px-6 

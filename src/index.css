@@ -11,7 +11,7 @@
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'JetBrains Mono', monospace;
   color: white;
   background-color: #050816;
 }
@@ -26,17 +26,17 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #6a32d1;
+  background: #32d17a;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #8352fd;
+  background: #52fd83;
 }
 
 /* Utility classes */
 .gradient-text {
-  background: linear-gradient(90deg, #8352fd, #5ce1e6);
+  background: linear-gradient(90deg, #52fd83, #5ce1e6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -52,7 +52,7 @@ body {
   left: 0;
   width: 100%;
   height: 2px;
-  background: linear-gradient(90deg, #8352fd, #5ce1e6);
+  background: linear-gradient(90deg, #52fd83, #5ce1e6);
   transform: scaleX(0);
   transform-origin: bottom right;
   transition: transform 0.3s ease;

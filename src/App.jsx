@@ -107,7 +107,7 @@ const Navbar = () => {
           className="text-2xl font-bold text-white cursor-pointer"
           onClick={() => scrollToSection('home')}
         >
-          <span className="text-purple-500">A</span>runeswari
+          <span className="text-green-500">Ajay</span>
         </div>
         
         {/* Desktop Navigation links */}
@@ -184,7 +184,7 @@ const App = () => {
       {/* Footer */}
       <div className="relative z-0">
         <footer className="bg-gray-900 py-8 text-center text-white">
-          <p>© {new Date().getFullYear()} Aruneswari Sankar. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Ajay Sunandan. All rights reserved.</p>
         </footer>
       </div>
     </div>
