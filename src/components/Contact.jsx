@@ -46,10 +46,10 @@ const Contact = () => {
                   <div>
                     <h4 className="text-lg text-green-400 font-medium">Email</h4>
                     <a 
-                      href="mailto:asunanda@andrew.cmu.edu"
+                      href="mailto:ajaysuriya3@gmail.com"
                       className="text-white hover:text-green-300 transition-colors"
                     >
-                      asunanda@andrew.cmu.edu
+                      ajaysuriya3@gmail.com
                     </a>
                   </div>
                 </div>
@@ -81,7 +81,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="text-lg text-green-400 font-medium">Location</h4>
-                    <p className="text-white">Pittsburgh, PA, USA</p>
+                    <p className="text-white">Seattle, WA, USA</p>
                   </div>
                 </div>
                 
@@ -184,12 +184,12 @@ const Contact = () => {
               </ul>
               
               <div className="mt-8 text-white">
-                <p>Feel free to reach out if you have any opportunities or would like to discuss potential collaborations!</p>
+                <p>Feel free to reach out if you have any opportunities!</p>
                 
                 <motion.a
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  href="mailto:asunanda@andrew.cmu.edu" 
+                  href="mailto:ajaysuriya3@gmail.com"
                   className="inline-block bg-gradient-to-r from-green-600 to-green-800 py-3 px-6 
                             rounded-full text-white font-medium shadow-lg mt-6"
                 >

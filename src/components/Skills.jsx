@@ -39,11 +39,11 @@ const Skills = () => {
   const skillCategories = [
     {
       title: "Security",
-      skills: ["Penetration Testing", "Vulnerability Assessment", "Malware Analysis", "Threat Modelling", "Network Security", "Forensics"]
+      skills: ["Penetration Testing", "Vulnerability Assessment", "Reverse Engineering", "Threat Modelling", "Threat Detection", "Forensics"]
     },
     {
       title: "Programming/Scripting Languages",
-      skills: ["C++", "Python", "C", "Go/Golang", "Shell", "Assembly language", "Powershell", "HTML", "Embedded C (arduino)"]
+      skills: ["C++", "Python", "C", "Go/Golang", "Shell", "Assembly language", "Powershell", "Rust", "Embedded C (arduino)"]
     },
     {
       title: "Frameworks & Tools",
@@ -103,10 +103,19 @@ const Skills = () => {
           <div className="space-y-8">
             <div className="relative pl-6 border-l-2 border-green-500">
               <div className="absolute w-4 h-4 bg-green-500 rounded-full -left-[9px] top-1"></div>
-              <h4 className="text-xl font-semibold text-white">Security Software Intern</h4>
-              <p className="text-cyan-300">Microsoft | May 2025 – Present</p>
+              <h4 className="text-xl font-semibold text-white">Software Engineer</h4>
+              <p className="text-cyan-300">Microsoft | Feb 2026 – Present</p>
               <p className="text-gray-300 mt-2">
-                Incoming intern at Microsoft, focusing on security software development and testing in Azure Edge + Platform team.
+                Working on AI scenarios under OneDrive–SharePoint.
+              </p>
+            </div>
+
+            <div className="relative pl-6 border-l-2 border-green-500">
+              <div className="absolute w-4 h-4 bg-green-500 rounded-full -left-[9px] top-1"></div>
+              <h4 className="text-xl font-semibold text-white">Software Engineer Intern</h4>
+              <p className="text-cyan-300">Microsoft | May 2025 – Aug 2025</p>
+              <p className="text-gray-300 mt-2">
+                Enabled WiFi feature for WinRE to detect and connect to known WiFi networks, allowing users to recover their devices without needing a wired connection.
               </p>
             </div>
 
@@ -115,12 +124,8 @@ const Skills = () => {
               <h4 className="text-xl font-semibold text-white">Network Consulting Engineer - II</h4>
               <p className="text-cyan-300"> Cisco | Aug 2021 – Jul 2024</p>
               <div className="text-gray-300 mt-2 space-y-2">
-                <p>- I led a comprehensive network infrastructure transformation, successfully migrating 20+ critical sites while deploying 50+ new network devices across 30+ maintenance windows—achieving a 100% success rate with zero service interruptions. This initiative delivered significant improvement in network performance and reliability.</p>
-                <p>- During the migration process, I diagnosed and resolved complex routing protocol issues spanning OSPF, BGP, IS-IS, and MPLS-VPN configurations.</p>
-                <p>- To streamline operations, I developed a custom configuration conversion tool using Jinja and TTP template engines, which reduced migration errors by 70% and increased project efficiency by 25%.</p>
-                <p>- I engineered a Python-based network automation solution leveraging TextFSM that transformed service discovery operations—reducing discovery time from 15 hours to just 20 minutes (75% improvement) while enhancing operational visibility by 80%.</p>
-                <p>- Additionally, I built an employee skills tracking application that achieved 70% adoption among managers through strategic engagement and training.</p>
-                <p>- I conducted an extensive software risk analysis across ISP infrastructure, identifying over 60 potential vulnerabilities and developing comprehensive mitigation strategies to strengthen the overall security posture.</p>
+                <p>- Led a network infrastructure transformation, migrating 20+ critical sites and deploying 50+ devices across 30+ maintenance windows with zero service interruptions.</p>
+                <p>- Resolved complex routing protocol issues (OSPF, BGP, IS-IS, MPLS-VPN) and built Python/TextFSM automation that cut service discovery time by 75%.</p>
               </div>
             </div>
             

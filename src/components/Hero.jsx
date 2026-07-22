@@ -58,8 +58,7 @@ const Hero = () => {
                 </h2>
                 
                 <p className="text-gray-300 text-base sm:text-lg mb-6">
-                A driven cybersecurity professional with a strong foundation in computer networks, currently pursuing a master’s in cybersecurity to deepen expertise in cloud and systems security. I'm eager to explore and contribute to securing modern digital infrastructure while optimizing system resilience and performance.
-                
+                Always Curious.
                 </p>
                 
                 <div className="flex flex-wrap gap-3 justify-center md:justify-start">

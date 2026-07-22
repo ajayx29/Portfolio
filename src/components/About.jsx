@@ -70,12 +70,12 @@ const About = () => {
               <div className="mb-4">
                 <div className="flex justify-between items-center">
                   <h5 className="text-white font-medium">Carnegie Mellon University</h5>
-                  <span className="text-green-300 text-sm">2024 - Present</span>
+                  <span className="text-green-300 text-sm">2024 - 2025</span>
                 </div>
                 <p className="text-gray-400 text-sm">Master of Science in Information Security</p>
                 <p className="text-gray-400 text-sm">GPA: 3.83.0/4.0</p>
                 <p className="text-gray-300 text-sm mt-1">
-                  <span className="text-green-300">Relevant Coursework:</span> Network Security, Cloud Security, Information Security, Cloud Computing, Cyber Risk Modeling, Information Assurance, Computer Systems, Distributed Systems.
+                  <span className="text-green-300">Relevant Coursework:</span> Offensive Security, Secure Coding, Network Security, Cloud Security, Cloud Computing, Cyber Risk Modeling, Information Assurance, Computer Systems, Distributed Systems.
                 </p>
               </div>
               
@@ -91,12 +91,6 @@ const About = () => {
                 </p>
               </div>
             </div>
-            
-            <p className="text-gray-300 mb-6">
-            I have professional experience as a Network Engineer at Cisco, where I led network infrastructure transformations across many critical sites with zero service interruptions. 
-            I resolved complex routing protocol issues spanning OSPF, BGP, IS-IS, and MPLS-VPN configurations. My technical expertise extends to network automation, having developed Python-based solutions that reduced service discovery time by 75%. 
-            Currently pursuing my Master of Science in Information Security at Carnegie Mellon University, I'm deepening my knowledge in Network Security, Cloud Security, Cyber Computing, and general cyber security to further enhance my cybersecurity expertise.
-            </p>
             
             {/* Key Skills */}
             {/* <h4 className="text-xl font-semibold text-white mb-3">Technical Skills</h4>
